@@ -1,0 +1,41 @@
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.Artistic {
+    padding-left: 10vw;
+    font-family: ' Berkshire Swash';
+    Font-size: 3vw;
+    padding-right: 5vw;
+    align-self: center;
+    vertical-align: top;
+    color:  #623C3C;
+}
+
+.NavElement {
+    padding-left: 7vw;
+    font-family: 'Prata';
+    padding-right: 4vw;
+    line-height: 100%;
+    font-size: 129%;
+    color:  black;
+
+
+
+}
+
+.HeaderNavbar {
+    padding-top: 2vw;
+
+}
+
+.ulContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}

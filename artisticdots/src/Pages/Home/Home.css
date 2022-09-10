@@ -1,0 +1,10 @@
+.HomeContainer{
+    height: 100%;
+    width: 100%;
+}
+.HomeContent {
+    padding-top: 17vw;
+    padding-bottom: 12vw;
+    padding-right: 41vw;
+    padding-left: 42vw;
+}
