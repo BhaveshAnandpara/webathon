@@ -39,4 +39,5 @@ li {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
+    padding-right: 2vw;
 }

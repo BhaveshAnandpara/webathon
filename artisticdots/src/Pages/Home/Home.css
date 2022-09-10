@@ -1,15 +1,35 @@
 .HomeContainer {
-    height: 100vw;
-    width: 100vw;
+    height: fit-content;
+    width: fit-content;
 }
 
 .HomeContent {
     padding-top: 17vw;
-    padding-bottom: 12vw;
+    padding-bottom: 16vw;
     padding-right: 24vw;
-    padding-left: 38vw;
+    padding-left: 36vw;
     font-family: 'Prata';
     align-self: center;
     font-style: normal;
-    font-size: 1.5vw;
+    font-size: 2vw;   
+}
+
+.scroll{
+    padding-left: 50vw;
+}
+
+.Hall_Of_Art{
+    height: 110vh;
+    width: 100vw;
+   background-color: #2C2C2C;
+
+}
+.Hall_Of_Art_Header{
+    font-family: 'Prata';
+    align-self: center;
+    color: #FFFFFF;
+    font-size: 2vw;
+    vertical-align: top;
+    padding-top: 2vw;
+    padding-left: 3vw;
 }
