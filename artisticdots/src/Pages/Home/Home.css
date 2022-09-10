@@ -1,10 +1,15 @@
-.HomeContainer{
-    height: 100%;
-    width: 100%;
+.HomeContainer {
+    height: 100vw;
+    width: 100vw;
 }
+
 .HomeContent {
     padding-top: 17vw;
     padding-bottom: 12vw;
-    padding-right: 41vw;
-    padding-left: 42vw;
+    padding-right: 24vw;
+    padding-left: 38vw;
+    font-family: 'Prata';
+    align-self: center;
+    font-style: normal;
+    font-size: 1.5vw;
 }

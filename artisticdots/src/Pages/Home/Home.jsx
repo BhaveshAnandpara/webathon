@@ -6,7 +6,7 @@ export default function Home() {
     <div className='HomeContainer'>
 
       <div className='HomeContent'>
-        "For Those with ART as their passion"
+        <p>   "For Those with ART as their passion" </p>
       </div>
 
 

@@ -7,21 +7,20 @@ li {
 }
 
 .Artistic {
-    padding-left: 10vw;
+  
     font-family: ' Berkshire Swash';
     Font-size: 3vw;
-    padding-right: 5vw;
-    align-self: center;
+    align-items: center;
     vertical-align: top;
     color:  #623C3C;
 }
 
 .NavElement {
-    padding-left: 7vw;
     font-family: 'Prata';
-    padding-right: 4vw;
-    line-height: 100%;
-    font-size: 129%;
+    line-height: 1vw;
+    align-items: center;
+    vertical-align: top;
+    font-size: 1.5vw;
     color:  black;
 
 
@@ -30,6 +29,7 @@ li {
 
 .HeaderNavbar {
     padding-top: 2vw;
+    /* position: fixed; */
 
 }
 
@@ -38,4 +38,5 @@ li {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-evenly;
 }
