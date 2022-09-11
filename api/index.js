@@ -4,6 +4,8 @@ const dotenv = require("dotenv")
 const cors = require("cors")
 dotenv.config()
 
+const uploadImageRoute = require('./Routes/uploadImages') 
+
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -12,7 +14,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.json())
-// app.use('/result' , Route)
+app.use('/upload' , uploadImageRoute)
 
 app.listen(8001, () => {
     console.log("Backend Server is Running");

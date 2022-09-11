@@ -1,0 +1,34 @@
+.info{
+    display: flex;
+    align-items: center;
+    border: 0.1vw solid black;
+    height: 30vw;
+}
+.contactus{
+    padding: 0vw 0vw 0vw 11vw;
+}
+.link{
+    padding: 0vw 0vw 0vw 11vw;
+}
+.contact{
+    
+    font-family: 'Berkshire Swash';
+    font-style: normal;
+    font-size: 3vw;
+}
+.lin{
+    
+    font-family: 'Berkshire Swash';
+    font-style: normal;
+    font-size: 3vw;
+}
+.desc1{
+    font-family: 'Prata';
+    font-style: normal;
+    font-size: 1.2vw;
+}
+.desc2{
+    font-family: 'Prata';
+    font-style: normal;
+    font-size: 1.2vw;
+}
