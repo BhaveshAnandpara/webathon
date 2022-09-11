@@ -1,7 +1,6 @@
 import React from 'react';
 import pic1 from '../../img/pic1.png';
 import './Home.css';
-import React from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls' //(use it after camera)
 import { BufferAttribute, BufferGeometry, cloneUniformsGroups } from 'three'

@@ -1,16 +1,29 @@
 import React from 'react'
 import './Footer.css'
-export default function Footer() {
-  return (
-<<<<<<< HEAD
-      <>
-        
-      </>
-  )
-}
+export default function Footer(props) {
 
-=======
-    <div className='info'>
+  let style = {}
+
+  let color = {
+    color: "white"
+  }
+
+  if (props.dark) {
+    style = {
+      backgroundColor: "#1E1E1E",
+      color : "white"
+    }
+  }
+  else {
+
+    style = {
+      backgroundColor: "white"
+    }
+
+  }
+
+  return (
+    <div className='info' style={style} >
       <div className='contactus'>
         <p className='contact'>Contact Us</p>
         <div className='desc1'>
@@ -35,4 +48,3 @@ export default function Footer() {
     </div>
   )
 }
->>>>>>> 7c48d14e41c13f0fa849ec1d84af83118136e800

@@ -3,6 +3,10 @@ import './HallOfArt.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/Footer';
+import { Instagram, Twitter, Facebook } from 'react-feather'
+import { Link } from 'react-router-dom';
 
 
 export default function HallOfArt() {
@@ -48,7 +52,18 @@ export default function HallOfArt() {
 
     arts.map((ele) => {
 
-      console.log(ele.art.imgPath);
+      let instaLink = ""
+      let twitterLink  = ""
+      let fbLink = ""
+
+      try {
+         instaLink = ele.art.socials.split('{')[2].split(": ")[1].split("\"")[1]
+         twitterLink = ele.art.socials.split('{')[3].split(": ")[1].split("\"")[1]
+         fbLink = ele.art.socials.split('{')[4].split(": ")[1].split("\"")[1]
+      } catch (err) {
+        console.log(err);
+      }
+
 
       let imgPath = ele.art.imgPath.split("\\")
       imgPath = imgPath[imgPath.length - 1]
@@ -57,9 +72,9 @@ export default function HallOfArt() {
 
       let style = {}
 
-      if(imgPath){
+      if (imgPath) {
 
-         style = {
+        style = {
           backgroundImage: `url(/uploads/${imgPath})`,
         }
       }
@@ -74,6 +89,18 @@ export default function HallOfArt() {
             <div >
               <p className='name'>{ele.art.artist}</p>
               <p className='descript'>{ele.art.desc}</p>
+              <p className='artists-socials'>
+                <Instagram onClick={() => {
+
+                  window.location.href = instaLink
+                }} />
+                <Twitter onClick={() => {
+                  window.location.href = twitterLink
+                }} />
+                <Facebook onClick={() => {
+
+                }} />
+              </p>
             </div>
           </div>
         </>
@@ -89,13 +116,18 @@ export default function HallOfArt() {
 
 
   return (
-    <div className='container'>
+    <>
+      <Navbar dark={true} />
 
-    <p className='section-name' >HALL OF ART</p>
+      <div className='container'>
 
-      <div className='container1' ref={hallContainer}>
+        <p className='section-name' >HALL OF ART</p>
 
+        <div className='container1' ref={hallContainer}>
+
+        </div>
       </div>
-    </div>
+      <Footer dark={true} />
+    </>
   )
 }
