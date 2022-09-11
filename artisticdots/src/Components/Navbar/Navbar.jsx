@@ -7,21 +7,14 @@ export default function Navbar(props) {
   let style = {}
 
   let color ={
-    color : "white"
+    color : "black"
   }
 
   if (props.dark) {
-     style = {
-      backgroundColor: "#1E1E1E",
-    }
+     style = { backgroundColor: "#1E1E1E" ,}
+     color = { color : "white" }
   }
-  else {
-
-       style = {
-        backgroundColor: "white"
-      }
-
-    }
+  
 
 
   return (

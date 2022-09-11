@@ -1,218 +1,204 @@
 import React from 'react';
-import pic1 from '../../img/pic1.png';
 import './Home.css';
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls' //(use it after camera)
-import { BufferAttribute, BufferGeometry, cloneUniformsGroups } from 'three'
-// import dat from 'dat.gui'
-import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper.js'
-import canvas from '../../Pages/Home/Home'
-import { useEffect, useState } from 'react'
-import texture from '../../Assets/textures/1.png'
-
+import { useEffect, useState, useRef } from 'react'
+import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
+import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import axios from 'axios'
+import Eventcard from '../../Components/EventCard/Eventcard';
+import { Instagram, Twitter, Facebook } from 'react-feather'
 
 
 export default function Home() {
 
+  const [arts, setArts] = useState([])
+  const [upcEvents, setUpcEvents] = useState([])
   const [imgArr, setImgArr] = useState([])
 
-  // useEffect(() => {
 
-  //   const scene = new THREE.Scene()
-
-  //   for (let i = -10; i < 5; i++) {
-
-
-  //     const geometry = new THREE.CircleGeometry(1, 32)
-
-  //     const material = new THREE.MeshBasicMaterial({
-  //       color: 0xE0BBE4, //  color : 'red' , color : '#ff0000' ,  also works
-  //       // wireframe : true //Shows Wiref,rame 
-  //     });
-
-  //     const mesh = new THREE.Mesh(geometry, material)
-  //     mesh.position.set(0.3 * i , 1,)
-  //     mesh.scale.set(0.1, 0.1, 0.1)
-
-  //     scene.add(mesh)
-  //   }
-
-  //   const sizes = {
-
-  //     width: 800,
-  //     height: 600,
-  //   }
+  const upcContainer = useRef()
+  const word = useRef()
+  const teamMembersSection = useRef()
 
 
-  //   const camera = new THREE.PerspectiveCamera(70, (sizes.width / sizes.height), 1, 1000)
+  const teamMembers = [
+    { name: "Bhavesh Anandpara", img: "/pic1.png", insta: "https://www.instagram.com/bhavesh_anandpara_______", twitter: "https://twitter.com/home", fb: "../" },
+    { name: "Shivam Charde", img: "/pic2.png", insta: "https://www.instagram.com/bhavesh_anandpara_______", twitter: "https://twitter.com/home", fb: "../" },
+    { name: "Vaishnavi Bhende", img: "/pic3.png", insta: "https://www.instagram.com/bhavesh_anandpara_______", twitter: "https://twitter.com/home", fb: "../" },
+    { name: "Pranjal Panchawate", img: "/pic4.png", insta: "https://www.instagram.com/bhavesh_anandpara_______", twitter: "https://twitter.com/home", fb: "../" },
+  ]
 
 
-  //   camera.position.z = 3// used 3 beacuse cube is of 1 unit so got away from cube by 3 units 
-  //   // camera.lookAt(mesh.position)
-  //   scene.add(camera)
+  useEffect(() => {
 
-  //   const canvas = document.querySelector('.webgl')
+    console.log(word.current);
 
-  //   const renderer = new THREE.WebGLRenderer({
-  //     canvas: canvas,  // Canvas for WEBGL
-  //   })
+    const fonts = [
 
-  //   renderer.setSize(sizes.width, sizes.height)
+    { "fontFamily" : "'Anton', sans - serif",  "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Combo', cursive"  ,"fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(302, 82%, 76%, 1) 0%, hsla(258, 40%, 68%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Lobster', cursive" , "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Lobster Two', cursive",  "fontSize": "32px", "fontWeight": "700", "background": " linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Permanent Marker', cursive",  "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Poppins', sans - serif"  , "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Press Start 2P', cursive"  , "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(302, 82%, 76%, 1) 0%, hsla(258, 40%, 68%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Qwitcher Grypen', cursive"  , "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Rampart One', cursive"  , "fontSize": "32px", "fontWeight": "700", "background": " linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Shadows Into Light', cursive"  , "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(238, 100%, 71%, 1) 0%, hsla(295, 100%, 84%, 1) 100%)", "-webkit-background-clip": "text" },
+    { "fontFamily" : "'Ultra', serif" , "fontSize": "32px", "fontWeight": "700", "background": "linear-gradient(90deg, hsla(302, 82%, 76%, 1) 0%, hsla(258, 40%, 68%, 1) 100%)", "-webkit-background-clip": "text" }
 
-  //   const tick = () => { //Creating a function for Animation 
+    ]
+
+    let index = 0
+    const interval = setInterval(
+      () => {
 
 
-  //     //Update Controls
+        // if (index > 20) {
+        //   console.log(index);
+        //   clearInterval(interval)
+        // }
+        console.log(index);
+        console.log(fonts[index % fonts.length]);
+        index++
+        const root = createRoot(word.current)
+        root.render(<span id='artWord' style={fonts[index % fonts.length]} >ART</span>)
+      },
+      1000
 
-  //     //render
-  //     renderer.render(scene, camera);
-
-  //     window.requestAnimationFrame(tick) // requestAnimationFrame() runs at 60 Frames per Second(FPS)
+    )
 
 
-  //   }
 
-  //   tick()
+  }, [])
 
-  // }, [])
+  useEffect(() => {
+
+    var config = {
+      method: 'get',
+      url: 'http://localhost:8001/upload/getEvents',
+      headers: {}
+    };
+
+    axios(config)
+      .then(function (response) {
+
+        let upcEvents = []
+
+        for (const key in response.data.upcomingEvents) {
+          upcEvents.push({ data: response.data.upcomingEvents[key] })
+        }
+
+        setUpcEvents(upcEvents)
+
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  }, [])
+
+  useEffect(() => {
+
+
+    let members = []
+
+    const root = createRoot(teamMembersSection.current)
+    teamMembers.forEach(member => {
+
+      members.push(
+        <>
+          <div className="member-container ">
+            <div className="member-img" style={{ backgroundImage: `url(/team/${member.img})` }}  ></div>
+            <div className="member-info">
+              <p className="member-name">{member.name}</p>
+              <div className="member-socials">
+                <Instagram />
+                <Twitter />
+                <Facebook />
+              </div>
+            </div>
+          </div>
+        </>)
+    });
+
+    root.render(members)
+
+  }, [])
+
+  useEffect(() => {
+
+
+    let events = []
+
+    const root = ReactDOM.createRoot(upcContainer.current)
+
+    upcEvents.map((ele) => {
+      events.push(<Eventcard data={ele} />)
+    })
+
+    root.render(events)
+
+
+  }, [upcEvents])
+
 
 
 
   return (
-    <section className='HomeContainer'>
+    <>
 
-      <div className='HomeContent'>
-        <p>   "For Those with ART as their passion" </p>
-      </div>
+      <Navbar />
+      <section className='hero-section'>
 
-      <div className='scroll'>scroll</div>
-
+        <div className='HomeContent'>
+          <p>" For Those with <span ref={word} id="word" > </span> as their passion " </p>
+        </div>
+      </section>
 
       <section className='Hall_Of_Art'>
 
         <div className='Hall_Of_Art_Header'>HALL OF ART</div>
+
         <div className='Hall_Of_Art_img'>
-          <div className='pic1'></div>
-          <div className='pic2'></div>
-          <div className='pic3'></div>
-          <div className='pic4'></div>
-          <div className='pic5'></div>
-          <div className='pic6'></div>
-          <div className='pic7'></div>
-
-        </div>
-
-
-
-
-      </section>
-      <section className='upcomingEvents'>
-        <div className='upcomingHeading'><p>OUR UPCOMING EVENTS</p></div>
-        <div className='eventCard'>
-          <div className='eventCard_1'>
-            <div className='imgcontainer'>img</div>
-            <div className='divinfo'>
-              <div><p className='info_heading'>Art Class</p></div>
-              <div><p className='events_discription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel condimentum magna. Nam quis bibendum nisi. Donec auctor neque quis turpis feugiat, ut blandit orci rhoncus. Nulla auctor fringilla lacinia. Vivamus in augue nunc. Sed pretium diam erat, nec hendrerit arcu volutpat at. In nec viverra velit.</p></div>
-              <div><button type='submit' className='btn-register'>Register</button></div>
+          <div>
+            <div className=' hoa-art pic1' style={{ backgroundImage: "url(/img/pic1.png)" }} ></div>
+            <div className=' hoa-art pic2' style={{ backgroundImage: "url(/img/pic2.png)" }}></div>
+          </div>
+          <div>
+            <div className=' hoa-art pic3' style={{ backgroundImage: "url(/img/pic3.png)" }}></div>
+            <div className=' hoa-art pic4' style={{ backgroundImage: "url(/img/pic4.png)" }}></div>
+          </div>
+          <div>
+            <div className=' hoa-art pic5' style={{ backgroundImage: "url(/img/pic5.png)" }}></div>
+            <div>
+              <div className=' hoa-art pic6' style={{ backgroundImage: "url(/img/pic6.png)" }}></div>
+              <div className=' hoa-art pic7' style={{ backgroundImage: "url(/img/pic7.png)" }}></div>
             </div>
           </div>
 
-          <div className='eventCard_2'>
-            <div className='imgcontainer'>img</div>
-            <div className='divinfo'>
-              <div><p className='info_heading'>Design Fundamentals</p></div>
-              <div><p className='events_discription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel condimentum magna. Nam quis bibendum nisi. Donec auctor neque quis turpis feugiat, ut blandit orci rhoncus. Nulla auctor fringilla lacinia. Vivamus in augue nunc. Sed pretium diam erat, nec hendrerit arcu volutpat at. In nec viverra velit.</p></div>
-              <div><button type='submit' className='btn-register'>Register</button></div>
-            </div>
+        </div>
+      </section>
+
+      <section className='upcomingEvents'>
+        <div className="upcomingEvents">
+          <h2 className='section-name' >UPCOMING EVENTS</h2>
+          <div ref={upcContainer} className='upc-events-container'>
           </div>
         </div>
       </section>
 
       <section className='meet_Team_Section'>
 
+        <p className="section-name " style={{ color: "white" }} > MEET THE TEAM </p>
 
-        <div className='Card'>
-          <div className="meet_Team_Heading">
-            <p>
-              MEET THE TEAM
-            </p>
-          </div>
-<div className="meet_Team_cont">
-  <div className="flex1">
-          <div className='Team_elements'>
-            <div className="team_img">
-              img
-            </div>
-            <div className='infocontainer'>
-              <div className='name'><p>Ralph Edwards</p></div>
-              <div>
-                <p className='logo'>LOGO</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='Team_elements'>
-            <div className="team_img">
-              img
-            </div>
-            <div className='infocontainer'>
-              <div className='name'><p>Courtney Henry</p></div>
-              <div>
-                <p  className='logo'>LOGO</p>
-              </div>
-            </div>
-          </div>
-          </div>
-
-
-
-<div className="flex2">
-          <div className='Team_elements'>
-            <div className="team_img">
-              img
-            </div>
-            <div className='infocontainer'>
-              <div className='name'><p >Arlene Meloy</p></div>
-              <div>
-                <p  className='logo'>LOGO</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='Team_elements'>
-            <div className="team_img">
-              img
-            </div>
-            <div className='infocontainer'>
-              <div className='name'><p>Jerome Bell</p></div>
-              <div>
-                <p  className='logo'>LOGO</p>
-              </div>
-            </div>
-          </div>
-          </div>
-          </div>
-
-        </div>
-      <section className='Hall_Of_Art'>
-
-        <section className='Hall_Of_Art_Header'>HALL OF ART</section>
-
-        <div className='Hall_Of_Art_img'>
-
-
-
-        </div>
+        <div className="teamMebers" ref={teamMembersSection} ></div>
 
       </section>
-
-
-
-
-      </section>
-
-    </section>
+      <Footer />
+    </>
   )
 }
 

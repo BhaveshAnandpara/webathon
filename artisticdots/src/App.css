@@ -44,4 +44,11 @@
 
 section{
   width: 99%;
+
+}
+
+body{
+  background-color: rgb(236, 236, 236);
+  width: 99vw;
+  overflow-x: hidden;
 }

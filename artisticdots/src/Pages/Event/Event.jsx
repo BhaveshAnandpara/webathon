@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useEffect, useState, useRef } from 'react'
 import * as ReactDOM from 'react-dom/client';
 import './Event.css'
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/Footer';
 
 export default function Event() {
 
@@ -82,6 +84,7 @@ export default function Event() {
 
   return (
     <>
+    <Navbar/>
       <section className='events-container' >
 
         <div className="upcomingEvents">
@@ -107,7 +110,7 @@ export default function Event() {
 
       </section>
 
-
+    <Footer/>
     </>
   )
 }

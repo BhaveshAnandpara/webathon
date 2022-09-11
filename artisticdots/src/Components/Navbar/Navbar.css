@@ -24,7 +24,8 @@ li {
 }
 
 .HeaderNavbar {
-    padding-top: 2vw;
+    padding-top: 2vw; 
+    background-color: rgb(236, 236, 236);
     /* position: fixed; */
 
 }
