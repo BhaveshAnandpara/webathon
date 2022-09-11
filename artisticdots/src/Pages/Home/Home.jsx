@@ -59,8 +59,6 @@ export default function Home() {
         //   console.log(index);
         //   clearInterval(interval)
         // }
-        console.log(index);
-        console.log(fonts[index % fonts.length]);
         index++
         const root = createRoot(word.current)
         root.render(<span id='artWord' style={fonts[index % fonts.length]} >ART</span>)
@@ -151,6 +149,7 @@ export default function Home() {
     <>
 
       <Navbar />
+
       <section className='hero-section'>
 
         <div className='HomeContent'>
@@ -197,6 +196,7 @@ export default function Home() {
         <div className="teamMebers" ref={teamMembersSection} ></div>
 
       </section>
+      
       <Footer />
     </>
   )

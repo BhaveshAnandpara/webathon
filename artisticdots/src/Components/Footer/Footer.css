@@ -33,3 +33,34 @@
     font-style: normal;
     font-size: 1.2vw;
 }
+
+@media only screen and (max-width: 480px) {
+
+    .info{
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .contactus,.link{
+        width: 80vw;
+        padding: 0%;
+
+    }
+
+    .contact{
+        font-size: 23px;
+    }
+
+    .desc1 {
+        font-size: 18px;        
+    }
+
+    .lin{
+        font-size: 23px;
+    }
+
+    .desc2{
+        font-size: 18px;
+    }
+
+}
