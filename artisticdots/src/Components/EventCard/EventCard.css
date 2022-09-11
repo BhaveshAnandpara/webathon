@@ -1,0 +1,66 @@
+
+.event-img {
+
+    display: block;
+    width: 30%;
+    height: 180px;
+    margin-right: 30px;
+    background-size: cover;
+
+}
+.event-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 30px;
+    margin: 20px;
+}
+
+.event-info {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 170%;
+
+}
+
+.event-name {
+
+    font-family: 'Berkshire Swash';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 39px;
+    line-height: 110.43%;
+    margin: 0%;
+    text-align: center;
+
+}
+
+.event-desc {
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 120.43%;
+}
+
+.register-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 54px;
+    gap: 40px;
+
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
+    cursor: pointer;
+}
