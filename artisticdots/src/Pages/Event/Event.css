@@ -30,6 +30,30 @@
 
 }
 
-.pastEvents{
+.pastEvents {
     margin-bottom: 100px;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .section-name {
+        font-size: 23px;
+    }
+
+    .event-row {
+        width: 100%;
+        padding: 0%;
+        font-size: 23px;
+        justify-content: space-evenly;
+    }
+
+    .event-row>span:nth-child(2),
+    .event-row>span:nth-child(3) {
+        display: none;
+    }
+
+    .register-btn{
+        padding: 12px 30px;
+    }
 }
