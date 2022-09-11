@@ -57,6 +57,7 @@ li {
         transition: 1s ease-in-out;
         position: absolute;
         background: rgb(236, 236, 236);
+        z-index: 10;
     }
 
 

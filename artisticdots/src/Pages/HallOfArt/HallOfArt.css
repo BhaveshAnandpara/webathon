@@ -49,3 +49,28 @@
     cursor: pointer;
 
 }
+
+@media only screen and (max-width: 480px) {
+
+    .container1{
+        grid-template-columns: auto;
+    }
+
+    .name{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .descript{
+        font-size: 18px;
+    }
+    
+
+    .pic{
+        height: 150px;
+    }
+
+    .grid-items{
+        margin-bottom: 20px;
+    }
+}

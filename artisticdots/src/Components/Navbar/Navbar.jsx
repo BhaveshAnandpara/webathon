@@ -20,7 +20,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <div className="navigation">
+      <div className="navigation" style={style} >
         <Menu className='menu' onClick={()=>{
 
           if(document.getElementById('drawer').style.transform === "translateX(-100%)" ){
@@ -31,7 +31,7 @@ export default function Navbar(props) {
           }
 
         }} />
-        <div className="drawer" id='drawer' >
+        <div className="drawer" id='drawer' style={style} >
           <ul className='ulContainer' >
             <Link  to='/' >Home</Link>
             <Link  to='/hall-of-art' >Hall of Art</Link>
