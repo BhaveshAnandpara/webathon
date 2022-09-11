@@ -69,8 +69,8 @@ export default function Event() {
       pEvents.push(
         <div className="event-row ">
             <span> {ele.data.name} </span>
-            <span> {ele.data.mode} </span>
             <span> {ele.data.date} </span>
+            <span> ({ele.data.mode})</span>
             <button className="register-btn">View more</button>
         </div>)
     })
