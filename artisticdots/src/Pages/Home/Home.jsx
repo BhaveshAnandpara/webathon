@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import './Home.css'
+import './Home.css';
+
 
 export default function Home() {
   return (
@@ -18,10 +19,8 @@ export default function Home() {
 <section className='Hall_Of_Art_Header'>HALL OF ART</section>
 <section className='Hall_Of_Art_img'>
 
-
-
+{/* ya pr function banky de */}
 </section>
-
 
 
 
