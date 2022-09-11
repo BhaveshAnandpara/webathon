@@ -1,0 +1,46 @@
+.container{
+    position: relative;
+    border: solid black;
+    color: white;
+    background-color: #1E1E1E;
+    padding: 2vw 2vw 2vw 3vw;
+}
+.container1{
+
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    padding: 40px;
+}
+.grid-items{
+    height: max-content;
+    margin-bottom: 100px;
+}
+.pic{
+    height: 400px;
+    border: 2px solid whitesmoke;
+    background-size: cover;
+}
+.name{
+    font-family: 'Berkshire Swash';
+    font-size: 3vw;
+    color: #FFFFFF;
+    position: relative;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+
+}
+.descript{
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 43px;
+    color: #FFFFFF;
+    margin-top: 0vw;
+}
+.info{
+    border: 1vw solid wheat;
+    margin: 60vw 8vw 0vw 8vw;
+    height: 20vw;
+    
+}
