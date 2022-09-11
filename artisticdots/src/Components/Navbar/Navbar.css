@@ -1,0 +1,43 @@
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.Artistic {
+  
+    font-family: ' Berkshire Swash';
+    Font-size: 3vw;
+    align-items: center;
+    vertical-align: top;
+    color:  #623C3C;
+}
+
+.NavElement {
+    font-family: 'Prata';
+    line-height: 1vw;
+    align-items: center;
+    vertical-align: top;
+    font-size: 1.5vw;
+    color:  black;
+
+
+
+}
+
+.HeaderNavbar {
+    padding-top: 2vw;
+    /* position: fixed; */
+
+}
+
+.ulContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 2vw;
+}
