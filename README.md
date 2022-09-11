@@ -16,8 +16,11 @@ We decieded to create a website for **ArtisticDots** as it will be great project
   <h2> Home Page </h2>
   Includes Hero Section , Hall of Art Section, Upcoming Events and Meet the Team Section
   
-  ![Banner](https://github.com/BhaveshAnandpara/BhaveshAnandpara/blob/main/BhaveshAnandpara.png)
-  
+
+
+https://user-images.githubusercontent.com/87887912/189554094-243a310a-9a3c-450f-bc63-4159ad658bcc.mp4
+
+
 </p>
 
 
